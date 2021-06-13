@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./Todoapp.css"
+
 export class Todoapp extends Component {
     state = {
         input:"",
@@ -24,12 +25,16 @@ export class Todoapp extends Component {
         // const allItems= this.state.items;
 
         this.state.items.splice(key,1);
-        console.log(key);
         this.setState({
             items:this.state.items.filter((index) => index !== key)
-            
         })
     };
+    editItem =(key)=>{
+      const edit = window.prompt('Type what to edit')
+
+        this.state.items.splice(key,1, edit)
+        this.setState({items:this.state.items.filter((index) =>index!==key)})
+    }
     deleteAll =() =>{
         // const everyItem = this.state.items;
         // everyItem.splice(key);
@@ -41,6 +46,7 @@ export class Todoapp extends Component {
 
     render() {
         const {input, items} =this.state;
+        console.log(items);
         return (
             <div className="todo-container">
 
@@ -54,7 +60,7 @@ export class Todoapp extends Component {
                     <ul>
                         {items.map((data,index)=>(
                             <div>
-                            <li key={index  }>{index}, {data} <i className="fas fa-trash-alt" onClick={()=>this.deleteItem(index)}></i></li>
+                            <li key={index}>{index}, {data} <div><i class="fas fa-edit" onClick={()=>this.editItem(index)}></i> <i className="fas fa-trash-alt" onClick={()=>this.deleteItem(index)}></i></div></li>
                             </div>
                             )
                         )}

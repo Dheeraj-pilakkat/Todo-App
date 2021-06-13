@@ -78,8 +78,10 @@ ul li{
     margin-bottom: 10px;
     background-color: #0d606e;
     color: skyblue;
+    justify-content: space-between;
 }
 ul li i{
+    margin: 0 10px;
     text-align: right;
     flex: 1;
     cursor: pointer;
