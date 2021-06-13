@@ -3,7 +3,7 @@ import Todoapp from './components/Todoapp'
 import Footer from './components/footer'
 function App() {
     return (
-        <div>
+        <div className="app">
             <Todoapp/>
             <Footer/>
         </div>

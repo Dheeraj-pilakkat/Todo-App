@@ -63,9 +63,9 @@ export class Todoapp extends Component {
                             <li key={index}>{index}, {data} <div><i class="fas fa-edit" onClick={()=>this.editItem(index)}></i> <i className="fas fa-trash-alt" onClick={()=>this.deleteItem(index)}></i></div></li>
                             </div>
                             )
-                        )}
-                            <button className="delete" onClick={()=>this.deleteAll()}>Delete All</button>
+                            )}
                     </ul>
+                            <button className="delete" onClick={()=>this.deleteAll()}>Delete All</button>
             </div>
         )
     }

@@ -8,9 +8,21 @@ body{
 .todo-container{
     width: 400px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 250px;
+    /* padding: 25px; */
+}
+@media (max-width:1024px) {
+    .todo-container{
+        margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* background-color: yellow; */
+    }
 }
 .input-section{
     display: flex;
@@ -24,6 +36,8 @@ body{
     background-color: #0d606e;
 }
 .input-section h1{
+   -webkit-animation: up-down 0.5s infinite alternate-reverse;
+   /* animation-duration: 0.2s; */
     color: skyblue;
 }
 .input-section div{
@@ -34,7 +48,7 @@ body{
     border-radius: 5px;
     border: none;
     background-color: rgb(11, 109, 122);
-    width: 75%;
+    width: 50%;
     padding: 15px;
     margin-right: 10px;
     outline: none;
@@ -46,6 +60,7 @@ input::placeholder{
  button{
     color: skyblue;
     width: 25%;
+    margin:0 10px ;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -58,8 +73,9 @@ input::placeholder{
 }
 .delete{
     padding: 15px;
-    top: 113px;
-    margin-left: 300px;
+    /* top: 113px; */
+    /* position: absolute; */
+    /* right: 0; */
     width: 95px;
     box-shadow: 2px 3px 2px rgba(255, 255, 255, 0.377);
 }
@@ -92,19 +108,35 @@ ul li i{
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: 50px 0;
+    padding: 50px 10px;
     bottom: 0;
     right: 0;
     left: 0;
     margin-bottom: 0;
-    /* height: auto; */
+    height: auto;
     background-color: rgb(0, 0, 0);
     color: rgb(225, 225, 225);
+    position: fixed;
+    /* animation: up-down 2s infinite alternate-reverse; */
 }
 .footer a{
     text-decoration: none;
     margin-left: 10px;
     text-transform: uppercase;
     color: rgb(184, 196, 207);
-
+}
+@keyframes up-down{
+    0%{
+        /* transform: translateY(-20px); */
+        /* transform: scaleY(2); */
+        opacity: 0;
+        /* mix-blend-mode: screen; */
+    }
+    100%{
+        /* transform: translateY(0); */
+        color: white;
+    }
+    /* 100%{
+        transform: translateY(20px);
+    } */
 }
